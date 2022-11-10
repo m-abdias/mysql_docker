@@ -3,7 +3,7 @@ const {
   sequelize
 } = require('./database')
 const faker = require('faker')
-const handler = async event => {
+const main = async event => {
   try {
       await sequelize.authenticate();
       console.log('Connection has been established successfully')
@@ -34,36 +34,7 @@ const handler = async event => {
   }
 }
 
-exports.handler = handler
+exports.main = main
 
 
 
-
-// "use strict";
-
-// const mysql = require('mysql');
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   database: 'overchain',
-//   user: 'root',
-//   password: 'OverChain2022!',
-//   port: '4306'
-// });
-
-// connection.connect();
-
-// module.exports.main = async (event) => {
-//   const res = await new Promise((resolve, reject) => {
-//     connection.query('SELECT * FROM criptomoedas', function (error, results) {
-//       if (error)
-//         reject(error);
-//       resolve(results)
-//     });
-//   })
-//   connection.end()
-//   console.log(res)
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify(res)
-//   };
-// };

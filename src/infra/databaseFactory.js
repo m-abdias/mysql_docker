@@ -22,7 +22,7 @@ const sequelize = new Sequelize(
     }
 )
 
-const Criptomoedas = sequelize.define('criptomoedas',
+const CriptoSchema = sequelize.define('criptomoedas',
     {
         id: {
             type: Sequelize.INTEGER,
@@ -48,6 +48,6 @@ const Criptomoedas = sequelize.define('criptomoedas',
 )
 
 module.exports = {
-    CriptoSchema: Criptomoedas,
+    CriptoSchema,
     sequelize
 }

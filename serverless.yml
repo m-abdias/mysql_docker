@@ -21,8 +21,8 @@ plugins:
   - serverless-offline
 
 functions:
-  hello:
-    handler: ./src/index.main
+  criarCriptomoeda:
+    handler: ./src/index.controllers.example.criarCriptomoeda
     events:
       - httpApi:
           path: /

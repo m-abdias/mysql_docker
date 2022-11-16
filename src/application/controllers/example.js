@@ -4,6 +4,7 @@ const {
 const { gerarCriptomoeda, formatSuccesResult } = require('../services/example')
 
 const criarCriptomoeda = async (event) => {
+  await CriptoSchema.sync()
   const criptomoeda = gerarCriptomoeda()
   const result = await CriptoSchema.create(criptomoeda)
   if (result) {
@@ -16,6 +17,7 @@ const criarCriptomoeda = async (event) => {
       all
     })
   }
+  
 }
 
 module.exports = {
